@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Runtime.Remoting.Services;
 
@@ -11,7 +12,8 @@ namespace cast2
 //            TwoDarrayTest();
 //            CloneArray();
 //            StringArrays();
-            TestParams();
+//            TestParams();
+            Sudoku.Start();
         }
 
         private static void TwoDarrayTest()
