@@ -10,7 +10,8 @@ namespace cast2
         {
 //            TwoDarrayTest();
 //            CloneArray();
-            StringArrays();
+//            StringArrays();
+            TestParams();
         }
 
         private static void TwoDarrayTest()
@@ -100,6 +101,19 @@ namespace cast2
             {
                 Console.WriteLine(t);
             }
+        }
+
+        private static void TestParams()
+        {
+            int[] array = EnterArray();
+            long sum = 0;
+
+            foreach (int t in array)
+            {
+                sum += t;
+            }
+            
+            Console.WriteLine("Sum of the array: {0}", sum);
         }
         
         
