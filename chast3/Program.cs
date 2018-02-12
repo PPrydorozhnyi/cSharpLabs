@@ -23,5 +23,10 @@ namespace chast3
                 Console.WriteLine(instance);
             }
         }
+
+        private static void TestSortedList()
+        {
+            
+        }
     }
 }
