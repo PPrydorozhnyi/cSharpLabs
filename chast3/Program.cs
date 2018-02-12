@@ -11,7 +11,8 @@ namespace chast3
 //            TestArrayList();
 //            TestSortedList();
 //            TestStack();
-            UsingDictionary();
+//            UsingDictionary();
+            SeparateWords();
         }
 
         private static void TestArrayList()
@@ -85,6 +86,99 @@ namespace chast3
             
             Console.WriteLine("your value: {0}", value);
             
+        }
+
+        private static void SeparateWords()
+        {
+            int s = 0;
+            string[] words;
+            string[] result = {"Noting"};
+
+            while (3 != s)
+            {
+                Console.WriteLine("Enter phrase, please: ");
+                words = Console.ReadLine().Split(' ');
+
+                Console.WriteLine("Choose comparator:\n1.By alphabet\n2.By length\n3.Exit");
+
+
+                switch (s = EnterInt())
+                {
+                    case 1:
+                        result = SortByAlphabet(words);
+                        break;
+                    case 2:
+                        result = SortByLength(words);
+                        break;
+                    default:
+                        Console.WriteLine("Unsupported operation");
+                        return;
+                }
+                Console.WriteLine("Sorted array: ");
+                DisplayArray(result);
+            }
+
+        }
+
+        private static string[] SortByAlphabet(string[] array)
+        {
+            string[] result = DuplicateArray(array);
+
+            Array.Sort(result);
+            
+            return result;
+        }
+
+        private static string[] SortByLength(string[] array)
+        {
+            string[] result = DuplicateArray(array);
+
+            Array.Sort(result, (x,y) => x.Length.CompareTo(y.Length));
+            
+            return result;
+        }
+
+        private static T[] DuplicateArray<T>(T[] array)
+        {
+            T[] duplicatedArray = new T[array.Length];
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                duplicatedArray[i] = array[i];
+            }
+
+            return duplicatedArray;
+        }
+        
+        private static void DisplayArray<T>(T[] array)
+        {
+         
+            foreach (T instace in array)
+            {
+                Console.WriteLine(instace);
+            }
+
+        }
+        
+        private static int EnterInt()
+        {
+            bool correctEnter = false;
+            int number = 0;
+
+            while (!correctEnter)
+            {
+                try
+                {
+                    number = Int32.Parse(Console.ReadLine());
+                    correctEnter = true;
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("Incorrect data. Re-enter, please");
+                }
+            }
+            
+            return number;
         }
     }
 }
