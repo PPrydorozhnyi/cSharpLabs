@@ -27,7 +27,7 @@ namespace cast2
       problem[7] = new int[] { 0, 0, 3, 0, 2, 8, 4, 0, 0 };
       problem[8] = new int[] { 0, 5, 0, 0, 0, 1, 2, 0, 0 };
 
-      //// http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5412260
+     
       //// very difficult.
       //// solved using no = 200, me = 9000
       //problem[0] = new int[] { 0, 0, 0, 0, 7, 0, 0, 0, 0 };
@@ -71,7 +71,6 @@ namespace cast2
       //problem[7] = new int[] { 9, 0, 3, 0, 0, 0, 0, 0, 0 };
       //problem[8] = new int[] { 0, 2, 0, 0, 0, 0, 1, 0, 0 };
 
-      //// http://elmo.sbs.arizona.edu/sandiway/sudoku/examples.html
       //// most difficult problem found by Internet search.
       //// solved eventually using no = 100, me = 5,000.
       //// solution when seed = 577 (i.e., 577 attempts ~ 20 min.)
