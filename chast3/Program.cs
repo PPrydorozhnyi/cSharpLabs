@@ -10,7 +10,8 @@ namespace chast3
         {
 //            TestArrayList();
 //            TestSortedList();
-            TestStack();
+//            TestStack();
+            UsingDictionary();
         }
 
         private static void TestArrayList()
@@ -37,13 +38,14 @@ namespace chast3
                 {"de derde", "you"},
                 {"de vierde", "?"}
             };
+            
 
             Console.WriteLine("by key\tby index");
             
-            Console.WriteLine("\t{0}\t{1}", sortedList.GetByIndex(sortedList.IndexOfKey("de eerste")), sortedList.GetByIndex(0));
-            Console.WriteLine("\t{0}\t{1}", sortedList.GetByIndex(sortedList.IndexOfKey("de tweede")), sortedList.GetByIndex(1));
-            Console.WriteLine("\t{0}\t{1}", sortedList.GetByIndex(sortedList.IndexOfKey("de derde")), sortedList.GetByIndex(2));
-            Console.WriteLine("\t{0}\t{1}", sortedList.GetByIndex(sortedList.IndexOfKey("de vierde")), sortedList.GetByIndex(3));
+            Console.WriteLine("{0}\t{1}", sortedList["de eerste"], sortedList.GetByIndex(0));
+            Console.WriteLine("{0}\t{1}", sortedList["de tweede"], sortedList.GetByIndex(1));
+            Console.WriteLine("{0}\t{1}", sortedList["de derde"], sortedList.GetByIndex(2));
+            Console.WriteLine("{0}\t{1}", sortedList["de vierde"], sortedList.GetByIndex(3));
             
         }
 
@@ -61,6 +63,28 @@ namespace chast3
             }
             
             Console.WriteLine("peek: {0}", stack.Peek());
+        }
+
+        private static void UsingDictionary()
+        {
+            Dictionary<string, int> numbers = new Dictionary<string, int>();
+            bool correctInput = false;
+            int value = -1;
+
+            for (int i = 0; i < 10; ++i)
+            {
+                numbers.Add(i.ToString(), i);
+            }
+
+            while (!correctInput)
+            {
+                Console.WriteLine("Enter your number, plese: ");
+                correctInput = numbers.TryGetValue(Console.ReadLine(), out value);
+                
+            }
+            
+            Console.WriteLine("your value: {0}", value);
+            
         }
     }
 }
