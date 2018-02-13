@@ -8,11 +8,11 @@ namespace chast3
     {
         public static void Main(string[] args)
         {
-//            TestArrayList();
+            TestArrayList();
 //            TestSortedList();
 //            TestStack();
 //            UsingDictionary();
-            SeparateWords();
+//            SeparateWords();
         }
 
         private static void TestArrayList()
@@ -24,9 +24,10 @@ namespace chast3
             arrayList.Add("you");
             arrayList.Add("?");
 
-            foreach (IEnumerable instance in arrayList)
+            IEnumerator instance = arrayList.GetEnumerator();
+            while(instance.MoveNext())
             {
-                Console.WriteLine(instance);
+                Console.WriteLine(instance.Current);
             }
         }
 
